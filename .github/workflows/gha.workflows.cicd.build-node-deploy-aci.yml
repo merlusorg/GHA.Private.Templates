@@ -100,7 +100,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name:  ${{ inputs.artifact-name }}
-        path: dist
+        path: dist/
     - name: login with credentials 
       uses: azure/login@v1
       with:
