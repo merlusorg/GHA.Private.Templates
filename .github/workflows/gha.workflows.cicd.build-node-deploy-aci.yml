@@ -96,7 +96,6 @@ jobs:
           ipValue=$(echo "$deployment" | jq -r '.containerIp.value')
           echo "You can access the container [here](http:\/\/$ipValue\/)" >> $GITHUB_STEP_SUMMARY
 
-jobs:
   build-version-number:
     name: Generate and tag build number
     runs-on: ubuntu-latest
