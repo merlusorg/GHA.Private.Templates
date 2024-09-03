@@ -167,7 +167,7 @@ jobs:
         template: ./infra/main.bicep
         parameters: image=${{ needs.build-docker.outputs.image-name }} acrName=${{ inputs.acr-registry }}
         deploymentMode: Validate
-        scope: resourceGroup
+        scope: resourcegroup
   
   deploy-container-instance:
     name: Deploy to ACI
@@ -197,5 +197,5 @@ jobs:
         template: ./infra/main.bicep
         parameters: image=${{ needs.build-docker.outputs.image-name }} acrName=${{ inputs.acr-registry }}
         failOnStdErr: false
-        scope: resourceGroup
+        scope: resourcegroup
     - run: echo "You can access the container [here](http:\/\/${{ steps.aci.outputs.containerIp }}\/)" >> $GITHUB_STEP_SUMMARY
